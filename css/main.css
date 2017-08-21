@@ -21,17 +21,29 @@ h5 {
 }
 
 
-.intro-page {
+h4 {
+  font-size: 28px;
 
 }
 
 
+.intro-page {
+
+}
+
+.chosen {
+  border: 2px solid #ebab1f ;
+}
 .float-right{
 	float: right;
 	padding: 15px;
 	margin-right: 50px;
 }
 
+
+.inactive {
+  opacity: 0.5;
+}
 .float-right > a {
 	color: white;
 	opacity: 0.9;
@@ -55,9 +67,26 @@ ul {
 
 li {
 	border: 1px solid #dcd4d4;
-	padding: 20px;
+	margin-bottom: 10px;
 	font-size: 20px;
+  -webkit-transition: width 2s, height 2s, background-color 2s, 
 }
+
+ li a {
+ 	color: black;
+ 	display: block;
+ 	padding: 20px;
+
+ }
+
+ li a:hover {
+ 	color: #ebab1f;
+ 	text-decoration: none;
+    font-size: 26px;
+
+
+
+ }
 
 #bubbles {
   position: absolute;
