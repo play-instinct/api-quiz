@@ -63,10 +63,10 @@ function clickAnswer(){
 
 
 function showCorrect(){
-
+	$("input:radio").find()
 }
 
-function showIncorrect(){
+function showCorrectAnswer(string){
 
 }
 
@@ -75,22 +75,27 @@ function checkText(){
 	currentText = $('#bubbles-switch').text()
 	if ($(".bubble").hasClass('hidden')) {
 
-		$('#bubbles-switch').text('Turn ON distracting bubbles!')
+		$('#bubbles-switch').text('Turn ON Distracting Bubbles!')
 	}	
 	else {
-		$('#bubbles-switch').text('Turn OFF distracting bubbles!')
+		$('#bubbles-switch').text('Turn OFF Distracting Bubbles!')
 		}
 }
 
 function checkAnswerChoice(userChoice){
 	const correctAnswer = state.questions[state.currentQuestion].correctAnswer;
+	const radio = $('input[value="' + correctAnswer + '"]');
+	radio.parent().addClass('correct');
 	if (userChoice === correctAnswer) {
 		console.log('correct');
+		const correct = $('input[name=answerchoice]:checked');
+		correct.parent().addClass('correct');
 		state.correctCount++;
-		showCorrect();
 	}
 	else {
-		showIncorrect();
+		const inCorrect = $('input[name=answerchoice]:checked');
+		inCorrect.parent().addClass('incorrect');
+		showCorrectAnswer(correctAnswer)
 	}
 	
 }
@@ -117,16 +122,17 @@ function renderQuestion() {
 	const currQuestionText = state.questions[state.currentQuestion].question;
     $('.question').html(currQuestionText).text();
     const possibleAnswers = state.questions[state.currentQuestion].possibleAnswers
-    const answersHtml = possibleAnswers.map( item => '<input type="radio" name="answerchoice" value="' + item + '">' + item );
-    $('.choice-wrapper').html(answersHtml);
+    const answersHtml = possibleAnswers.map( item => '<li><input type="radio" name="answerchoice" value="' + item + '">' + item + '</li>');
+    $('#choices').html(answersHtml);
     $('#next-question').hide();
 
 }
 
 function renderResultsPage() {
 	$('.quiz-page').empty();
-	$('.quiz-page').html($('h1').text('Game Over!'))
-	$('.quiz-page').html($('h4').text('Total Number Correct:' + state.correctCount))
+	$('.quiz-page').html('<h1>Game Over!</h1><h5>Number Correct: ' + state.correctCount + '/10 </h5>');
+
+
 }
 
 function nextQuestion() {
@@ -139,6 +145,7 @@ function nextQuestion() {
 		renderResultsPage()
 	}
 	
+	$("input:radio").attr("checked", false);
 }
 
 

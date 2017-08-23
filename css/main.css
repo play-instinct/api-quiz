@@ -1,13 +1,48 @@
 .container {
-	margin: 60px auto;
+	margin: 8% auto;
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 20px;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: #ebab1f;
 	padding-bottom: 25px;
 	text-align: center;
-	background-color: white;
+
+}
+
+.fa.fa-beer {
+    color: #ebab1f;
+    font-size: 81px;
+}
+
+.row {
+  margin: 30px auto;
+    background-color: white;
+
 }
 
 
-.choice-wrapper {
+hr {
+    background-color: #ebab1f;
+    color:   #ebab1f;
+}
+
+.inner-content:first-child {
   padding: 20px;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+}
+
+.quiz-page > .inner-content {
+  padding: 0px;
+}
+.hidden {
+  display: none;
+}
+.choice-wrapper {
+  padding: 0px;
 }
 body {
 	background-color: 
@@ -35,7 +70,7 @@ h4 {
 
 
 .intro-page {
-
+  padding-bottom: 30px;
 }
 
 .chosen {
@@ -48,12 +83,55 @@ h4 {
 }
 
 
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 10px 35px;
+  font-size: 20px;
+  font-family: 'Lora', serif;
+
+  line-height: 1.5;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none
+}
+
+.correct {
+  background-color: green;
+  border: 1px solid green;
+  color: white;
+}
+
+
+.incorrect {
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+}
+
+
+.question {
+padding: 20px;
+    font-size: 26px;
+    margin: 0px;
+}
+
 .inactive {
   opacity: 0.5;
 }
 .float-right > a {
 	color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
 	opacity: 0.9;
+
 }
 
 html, body {
@@ -83,6 +161,7 @@ li {
  	color: black;
  	display: block;
  	padding: 20px;
+
 
  }
 

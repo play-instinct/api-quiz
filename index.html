@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title>Quiz</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css">
+  <script src="https://use.fontawesome.com/e14cb15e42.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="turn-off float-right">
@@ -11,31 +13,34 @@
 </div>
 <div class ="container">
 	<div class ="intro-page row">
-		<div class="col-lg-12">
+		<div class="inner-content">
 		<h1>Pub Quiz!</h1>
 		</div>
-		<div class="col-lg-12">
-		<h3 class="beer-emoji">🍻</h3>
+		<div class="inner-content">
+		<i class="fa fa-beer" aria-hidden="true"></i>
+
 		<h5>Impress your friends at your next trivia night by familiarizing yourself with common Pub Quiz Questions.</h5>
 		</div>
-		<hr>
 		<button type="button" class="btn btn-success btn-lg" id="start-button" disabled="true">Loading Data...</button>
 	</div>
-	<div class="quiz-page row hidden">
-		<div class="col-lg-12">
+	<div class="quiz-page  hidden ">
+		<div class="inner-content">
 		<h1>Question 1/10</h1>
 		</div>
-		<div class="row">
-			<div class="col-lg-12 text-center">
+		<div class="row question" id="inject-data">
+			<div class="inner-content text-center">
       <h4 class="question">
 			What is the capital of Slovakia?</h4>
 			</div>
 		</div>
-		<div class="row">
-		<div class="col-lg-12">
-      <div class="choice-wrapper">			  
+		<div class="row animated fadeInUp">
+		<div class="inner-content">
+      <div class="choice-wrapper">
+      <ul id="choices">
+        
+      </ul>			  
       </div>
-      <button id="next-question">
+      <button id="next-question" class="animated fadeInUp">
         Next Question
       </button>
 		</div>
