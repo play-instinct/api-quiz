@@ -6,10 +6,17 @@
 }
 
 
+.choice-wrapper {
+  padding: 20px;
+}
 body {
 	background-color: 
 }
 
+
+input[type=radio] {
+    margin: 2px 20px 6px;
+}
 
 h3 {
 	font-size: 80px;

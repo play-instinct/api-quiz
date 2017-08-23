@@ -19,7 +19,7 @@
 		<h5>Impress your friends at your next trivia night by familiarizing yourself with common Pub Quiz Questions.</h5>
 		</div>
 		<hr>
-		<button type="button" class="btn btn-success btn-lg" id="start-button">Start Pub Quiz</button>
+		<button type="button" class="btn btn-success btn-lg" id="start-button" disabled="true">Loading Data...</button>
 	</div>
 	<div class="quiz-page row hidden">
 		<div class="col-lg-12">
@@ -33,12 +33,11 @@
 		</div>
 		<div class="row">
 		<div class="col-lg-12">
-			<ul>
-				<li><a class ="answer-choice" href="#">Bratislava</a></li>
-				<li><a class ="answer-choice" href="#">Sofia</a></li>
-				<li><a class ="answer-choice" href="#">Ljubljana</a></li>
-				<li><a class ="answer-choice" href="#">Sarajevo</a></li>
-			</ul>
+      <div class="choice-wrapper">			  
+      </div>
+      <button id="next-question">
+        Next Question
+      </button>
 		</div>
 		</div>
 </div>
