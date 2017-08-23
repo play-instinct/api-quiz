@@ -34,6 +34,9 @@ function organizeData(data){
 
 
 
+
+
+
 function beginGame() {	
 	$('#start-button').text('Start Quiz').prop('disabled', false);
 	$('#start-button').on("click", function(){
@@ -89,11 +92,7 @@ function checkAnswerChoice(userChoice){
 	else {
 		showIncorrect();
 	}
-	setTimeout(() => {
-		state.currentQuestion++;
-		renderQuestion();
-	}, 5000);
-
+	
 }
 
 
