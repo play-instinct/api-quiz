@@ -103,6 +103,8 @@ button:focus {
 
 .results-page-title {
   font-size: 60px;
+  margin: 0px;
+  padding: 0px;
 }
 .correct {
   background-color: green;
@@ -112,6 +114,8 @@ button:focus {
 
 .number-correct {
   font-size: 36px;
+  padding: 0px;
+  margin: 0px;
 }
 
 
