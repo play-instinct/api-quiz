@@ -34,6 +34,10 @@ function organizeData(data){
 
 
 
+function playAgain() {
+	location.reload();
+}
+
 
 
 
@@ -130,10 +134,13 @@ function renderQuestion() {
 
 function renderResultsPage() {
 	$('.quiz-page').empty();
-	$('.quiz-page').html('<h1>Game Over!</h1><h5>Number Correct: ' + state.correctCount + '/10 </h5>');
+	$('.quiz-page').html(
+		'<h1 class="results-page-title">Game Over!</h1><h5 class="number-correct">Number Correct: ' + state.correctCount + '/10 </h5><div class="play-again-container"><button id="play-again" onclick="playAgain();">Play Again</button></div> ');
 
 
 }
+
+
 
 function nextQuestion() {
 	if (state.currentQuestion < state.questions.length - 1){
@@ -144,7 +151,6 @@ function nextQuestion() {
 	else {
 		renderResultsPage()
 	}
-	
 	$("input:radio").attr("checked", false);
 }
 
