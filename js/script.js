@@ -15,6 +15,9 @@ function bubbleSwitch(){
 }
 
 
+function removefailedOption(){
+	console.log('failed');
+}
 
 
 function organizeData(data){
@@ -32,6 +35,11 @@ function organizeData(data){
 
 }
 
+
+function organizeCategories(data){
+	console.log('organizing results of categories');
+	console.log(data.trivia_categories);
+}
 
 
 function playAgain() {
@@ -117,6 +125,18 @@ function getData(){
 }
 
 
+function getCategories(){
+	$.ajax({
+        url: "https://opentdb.com/api_category.php",
+        type: 'GET',
+        dataType: 'json',
+        timeout: 1000,
+       success: organizeCategories,
+       error: removefailedOption
+   })
+
+}
+
 function changeQuestionNumber() {
 	const currentQuestionNumber = (state.currentQuestion + 1);
 	$('h1').text('Question ' + currentQuestionNumber + "/10" );
@@ -167,9 +187,15 @@ function serveStaticQuestions(){
 
 $(function(){
 	getData();
+	getCategories();
 	bubbleSwitch();
 	clickAnswer();	
     $('#next-question').click(nextQuestion);
 });
 
+
+
+$(function() {
+    $('.options-modal').easyModal();
+});
 

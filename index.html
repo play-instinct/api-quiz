@@ -22,7 +22,7 @@
 		<h5>Impress your friends at your next trivia night by familiarizing yourself with common Pub Quiz Questions.</h5>
 		</div>
 		<button type="button" class="btn btn-success btn-lg" id="start-button" disabled="true">Loading Data...</button>
-    <div class='options-container'><a href="#">Options</a></div>
+    <div class='options-container'><a href="#" id="options-button">Options</a></div>
 	</div>
 	<div class="quiz-page  hidden ">
 		<div class="inner-content">
@@ -47,7 +47,27 @@
 		</div>
 		</div>
 </div>
-
+<div class="options-modal">
+<h5>Options</h5>
+<div class="option-container">
+  <div class="option-label">Difficulty Level:</div>
+      <select>
+        <option value="volvo">Easy</option>
+        <option value="saab">Medium</option>
+        <option value="vw">Hard</option>
+        <option value="audi" selected>Random</option>
+      </select>
+</div>
+<div class="options-container">
+   <div class="option-label">Category:</div>
+     <select>
+        <option value="volvo">Easy</option>
+        <option value="saab">Medium</option>
+        <option value="vw">Hard</option>
+        <option value="audi" selected>Random</option>
+      </select>
+</div>
+</div>
 <div id='bubbles hidden'>
   <div class='bubble'></div>
   <div class='bubble'></div>
@@ -157,6 +177,7 @@
   crossorigin="anonymous"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/jquery.easyModal.js"></script>
 <script src="js/script.js"></script>
 
 </html>
