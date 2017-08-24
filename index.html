@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quiz</title>
+	<title>Pub Quiz!</title>
+  <link rel="stylesheet" href="css/style-modal.css">
 	<link rel="stylesheet" href="css/main.css">
-  <script src="https://use.fontawesome.com/e14cb15e42.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 </head>
@@ -47,21 +47,28 @@
 		</div>
 		</div>
 </div>
-<div class="options-modal">
-<h5>Options</h5>
-<div class="option-container">
+<div class="options-modal hidden">
+  <div class="inner-content">
+    <h4>Options</h4>
+  </div>
+<div class="options-container">
   <div class="option-label">Difficulty Level:</div>
-      <select>
-        <option value="volvo">Easy</option>
-        <option value="saab">Medium</option>
-        <option value="vw">Hard</option>
-        <option value="audi" selected>Random</option>
+    <div include="form-input-select()" class="select-wrapper">
+      <select required id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+        <option value="random" selected>Random</option>
       </select>
+    </div>
 </div>
 <div class="options-container">
    <div class="option-label">Category:</div>
-     <select id="category">
+   <div include="form-input-select()" class="select-wrapper">
+     <select required id="category">
+        
       </select>
+    </div>
 </div>
 </div>
 <div id='bubbles hidden'>
@@ -171,9 +178,8 @@
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/jquery.easyModal.js"></script>
-<script src="js/script.js"></script>
+ <script src="https://use.fontawesome.com/e14cb15e42.js"></script>
+<script src="js/easy-modal.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </html>

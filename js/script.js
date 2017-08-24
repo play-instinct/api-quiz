@@ -36,9 +36,13 @@ function organizeData(data){
 }
 
 
-function organizeCategories(data){
-	console.log('organizing results of categories');
+function changeQuestionOptions(category, difficulty,){
 
+}
+
+
+function organizeOptions(data){
+	console.log('organizing results of options');
 	const categories = data.trivia_categories.map(item => ({
 		category: item.name,
 		foo: "bar"
@@ -46,9 +50,9 @@ function organizeCategories(data){
 
 	console.log(categories[0].category)
 	const selectors = categories.map( item => '<option value="' + item.category + '">' + item.category + '</option>');
+
 	const selecttag = $("#category").html(selectors);
-
-
+	$("#category").append('<option value="random" selected>Random</option>')
 }
 
 
@@ -141,9 +145,10 @@ function getCategories(){
         type: 'GET',
         dataType: 'json',
         timeout: 1000,
-       success: organizeCategories,
+       success: organizeOptions,
        error: removefailedOption
    })
+	
 
 }
 
@@ -200,11 +205,17 @@ $(function(){
 	getCategories();
 	bubbleSwitch();
 	clickAnswer();
-	$('.options-modal').easyModal();
+	renderOptionsmodal();
     $('#next-question').click(nextQuestion);
-    $('#options-button').trigger('openModal');
 });
 
+
+function renderOptionsmodal() {
+	$('#options-button').on("click", function(e){
+		$('.intro-page').addClass('hidden');
+		$('.options-modal').removeClass('hidden')
+	})
+}
 
 
 
