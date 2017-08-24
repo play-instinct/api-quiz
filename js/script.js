@@ -38,7 +38,17 @@ function organizeData(data){
 
 function organizeCategories(data){
 	console.log('organizing results of categories');
-	console.log(data.trivia_categories);
+
+	const categories = data.trivia_categories.map(item => ({
+		category: item.name,
+		foo: "bar"
+	}));
+
+	console.log(categories[0].category)
+	const selectors = categories.map( item => '<option value="' + item.category + '">' + item.category + '</option>');
+	const selecttag = $("#category").html(selectors);
+
+
 }
 
 
@@ -189,13 +199,14 @@ $(function(){
 	getData();
 	getCategories();
 	bubbleSwitch();
-	clickAnswer();	
+	clickAnswer();
+	$('.options-modal').easyModal();
     $('#next-question').click(nextQuestion);
+    $('#options-button').trigger('openModal');
 });
 
 
 
-$(function() {
-    $('.options-modal').easyModal();
-});
+
+
 
