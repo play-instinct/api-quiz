@@ -2505,13 +2505,15 @@ li {
   border-bottom: 1px solid #eaeaea;
 }
 
+
+
 .options-label {
   width: 49%;
    text-align: right;
 }
 
 #options-button {
-  color: #ebab1f;
+  color: #ebab1f !important;
   padding-bottom: 5px;
   border-bottom: 1px solid #ebab1f;
   text-decoration: none;
