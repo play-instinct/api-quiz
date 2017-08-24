@@ -47,7 +47,8 @@
 		</div>
 		</div>
 </div>
-<div class="options-modal hidden">
+<div class="options-modal hidden animated fadeInUp">
+<div class="exit-options"><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></div>
   <div class="inner-content">
     <h4>Options</h4>
   </div>
@@ -66,9 +67,12 @@
    <div class="option-label">Category:</div>
    <div include="form-input-select()" class="select-wrapper">
      <select required id="category">
-        
+
       </select>
     </div>
+</div>
+<div class="reload-wrapper">
+<button type="button" class="btn btn-success btn-lg" id="reload-questions-btn" >Update Question List</button>
 </div>
 </div>
 <div id='bubbles hidden'>

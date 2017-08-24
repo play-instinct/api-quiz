@@ -1,5 +1,5 @@
 .container {
-	margin: 0 auto;
+	margin: 60px auto;
   width: 80%;
   font-family: 'Open Sans', sans-serif;
   background-color: #ebab1f;
@@ -2502,9 +2502,32 @@ li {
 .options-container {
   padding: 20px;
   overflow: hidden;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .options-label {
   width: 49%;
    text-align: right;
+}
+
+#options-button {
+  color: #ebab1f;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ebab1f;
+  text-decoration: none;
+}
+
+
+.exit-options a {
+  color: grey;
+  float: right;
+  padding: 15px;
+}
+
+.reload-wrapper {
+  margin: 20px;
+}
+
+.exit-options i {
+  font-size: 34px;
 }

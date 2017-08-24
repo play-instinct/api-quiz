@@ -17,6 +17,7 @@ function bubbleSwitch(){
 
 function removefailedOption(){
 	console.log('failed');
+	$('#category').parent().parent().remove();
 }
 
 
@@ -191,7 +192,14 @@ function nextQuestion() {
 
 
 
+function closeModal(){
+	$('.exit-options').on("click", function(e){
+		e.preventDefault();
+		$('.options-modal').addClass('hidden');
+		$('.intro-page').removeClass('hidden')
+	})
 
+}
 
 function serveStaticQuestions(){
 	console.log('in static')
@@ -206,6 +214,7 @@ $(function(){
 	bubbleSwitch();
 	clickAnswer();
 	renderOptionsmodal();
+	closeModal();
     $('#next-question').click(nextQuestion);
 });
 
