@@ -2518,7 +2518,9 @@ li {
   border-bottom: 1px solid #ebab1f;
   text-decoration: none;
 }
-
+.gif {
+  padding-bottom: 15px;
+}
 
 .exit-options a {
   color: grey;

@@ -38,7 +38,14 @@ function organizeData(data){
 
 
 function changeQuestionOptions(category, difficulty,){
-
+	$.ajax({
+        url: 'https://opentdb.com/api.php?amount=10' + '&category=' + category +  '&difficulty=' + difficulty,
+        type: 'GET',
+        dataType: 'json',
+        timeout: 1000,
+       success: organizeData,
+       error: serveStaticQuestions
+   })
 }
 
 
@@ -53,7 +60,7 @@ function organizeOptions(data){
 	const selectors = categories.map( item => '<option value="' + item.category + '">' + item.category + '</option>');
 
 	const selecttag = $("#category").html(selectors);
-	$("#category").append('<option value="random" selected>Random</option>')
+	$("#category").append('<option value="random" selected>Any Category</option>')
 }
 
 
@@ -130,7 +137,7 @@ function checkAnswerChoice(userChoice){
 
 function getData(){
 	$.ajax({
-        url: "https://opentdb.com/api.php?amount=10",
+        url: 'https://opentdb.com/api.php?amount=10',
         type: 'GET',
         dataType: 'json',
         timeout: 1000,
@@ -142,15 +149,13 @@ function getData(){
 
 function getCategories(){
 	$.ajax({
-        url: "https://opentdb.com/api_category.php",
+        url: 'https://opentdb.com/api_category.php',
         type: 'GET',
         dataType: 'json',
         timeout: 1000,
        success: organizeOptions,
        error: removefailedOption
-   })
-	
-
+   })	
 }
 
 function changeQuestionNumber() {
@@ -216,6 +221,7 @@ $(function(){
 	clickAnswer();
 	renderOptionsmodal();
 	closeModal();
+	harvestOptions();
     $('#next-question').click(nextQuestion);
 });
 
@@ -226,6 +232,24 @@ function renderOptionsmodal() {
 		$('.options-modal').removeClass('hidden')
 	})
 }
+
+
+function harvestOptions() {
+	$('#reload-questions-btn').on("click", function(){
+		const userCategory = $('#category').val();
+		const difficulyLevel = $('#difficulty').val();
+		const categoryValue = $('select[name=category]').val();
+        const diffValue = $('select[name=diff]').val();
+        const diff = diffValue === 'any' ? false : diffValue;
+          if (diff || userCategory) {
+        	changeQuestionOptions(diff, userCategory);
+        }
+        console.log('harvested!');
+
+	})
+}
+
+
 
 
 
