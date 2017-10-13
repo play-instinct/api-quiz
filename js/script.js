@@ -167,7 +167,7 @@ function renderQuestion() {
 	const currQuestionText = state.questions[state.currentQuestion].question;
     $('.question').html(currQuestionText).text();
     const possibleAnswers = state.questions[state.currentQuestion].possibleAnswers
-    const answersHtml = possibleAnswers.map( item => '<li><input type="radio" name="answerchoice" aria-labelledby="' + item +'"' + 'value="' + item + '">' + item + '</li>');
+    const answersHtml = possibleAnswers.map( item => '<li><input type="radio" name="answerchoice" aria-label="' + item +  'value="' + item + '">' + item + '</li>');
     $('#choices').html(answersHtml);
     $('#next-question').hide();
 
