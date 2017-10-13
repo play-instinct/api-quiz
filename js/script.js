@@ -57,7 +57,7 @@ function organizeOptions(data){
 	}));
 
 	console.log(categories[0].category)
-	const selectors = categories.map( item => '<option value="' + item.category + '">' + item.category + '</option>');
+	const selectors = categories.map( item => '<option value="' + item.category + '"' +  'aria-labelledby="' + item.category + '"' + '>' + item.category + '</option>');
 
 	const selecttag = $("#category").html(selectors);
 	$("#category").append('<option value="random" selected>Any Category</option>')
@@ -167,7 +167,7 @@ function renderQuestion() {
 	const currQuestionText = state.questions[state.currentQuestion].question;
     $('.question').html(currQuestionText).text();
     const possibleAnswers = state.questions[state.currentQuestion].possibleAnswers
-    const answersHtml = possibleAnswers.map( item => '<li><input type="radio" name="answerchoice" value="' + item + '">' + item + '</li>');
+    const answersHtml = possibleAnswers.map( item => '<li><input type="radio" name="answerchoice" aria-labelledby="' + item +'"' + 'value="' + item + '">' + item + '</li>');
     $('#choices').html(answersHtml);
     $('#next-question').hide();
 
